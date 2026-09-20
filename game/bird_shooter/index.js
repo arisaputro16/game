@@ -1,10 +1,14 @@
 let counter = 1;
+
 let start = "";
+
 let end = "";
+
 let totalTime = "";
+
 if (localStorage.getItem("topScore") !== null) {
-let topScore = localStorage.getItem("topScore");
-document.getElementById("topScore").innerHTML = topScore + "s";
+    let topScore = localStorage.getItem("topScore");
+    document.getElementById("topScore").innerHTML = topScore + "s";
 }
 
 showBird ();
@@ -46,7 +50,7 @@ function setTopscore () {
     if (localStorage.getItem("topScore") == null) {
         localStorage.setItem("topScore",totalTime);
         document.getElementById("topScore").innerHTML = totalTime + "s";
-    } else if (totalTime < topScore) {
+    } else if (totalTime < localStorage.getItem("topScore")) {
         localStorage.setItem("topScore",totalTime);
         document.getElementById("topScore").innerHTML = totalTime + "s";
     } 
